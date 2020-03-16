@@ -18,7 +18,7 @@ function getCurrentTabUrl() {
   });
 }
 
-//this is the botton for potato later
+//this is the botton for potato later.
 
 // let Timer = document.getElementById('Timer');
 // function openInNewTab(url) {
