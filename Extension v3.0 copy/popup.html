@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body{
+   min-width:250px;
+   height:150px;
+   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+   padding:10px;
+   }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: DEEPSKYBLUE; height: 0px; margin-top: 0px"></div>
+     <p>Welcome To the Potato TV Extension</p>
+<!-- Actually need this to get the URL and open in a new tab instead of displaying it -->
+     <button id="GetURL"> Watch now</button>
+<!-- I need to actually get the button below to surface a timer -->
+     <button id="Timer"> Potato later</button>
+<!-- This is a new test for opening in a second tab -->
+     <!-- <button onclick="NewTab()"> New tab test </button> -->
+     <!-- Below is where the URL surfaces (right now having it below the 2 buttons) -->
+     <!-- Problem with below is that the URL extends the length of the popup the longer the link -->
+     <p > <span id="url"> </span> </p>
+     <p > Watch with others  <span id="selectedtext"> </span> </p>
+     <button id="colorChange"> Invite potatoes </button>
+     <script src="background.js"></script>
+  </body>
+</html>
