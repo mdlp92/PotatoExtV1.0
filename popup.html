@@ -1,29 +1,160 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-    body{
-   min-width:250px;
-   height:150px;
-   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-   padding:10px;
-   }
-    </style>
-  </head>
-  <body>
-    <div style="background-color: DEEPSKYBLUE; height: 0px; margin-top: 0px"></div>
-     <p>Welcome To the Potato TV Extension</p>
-<!-- Actually need this to get the URL and open in a new tab instead of displaying it -->
-     <button id="GetURL"> Watch now</button>
-<!-- I need to actually get the button below to surface a timer -->
-     <button id="Timer"> Potato later</button>
-<!-- This is a new test for opening in a second tab -->
-     <!-- <button onclick="NewTab()"> New tab test </button> -->
-     <!-- Below is where the URL surfaces (right now having it below the 2 buttons) -->
-     <!-- Problem with below is that the URL extends the length of the popup the longer the link -->
-     <p > <span id="url"> </span> </p>
-     <p > Watch with others  <span id="selectedtext"> </span> </p>
-     <button id="colorChange"> Invite potatoes </button>
-     <script src="background.js"></script>
-  </body>
+
+<head>
+  <style>
+    html {
+      /* 1rem = 10px */
+      font-size: 62.5%;
+    }
+
+    body {
+      min-width: 300px;
+      width: 300px;
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+
+    .header-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid black;
+      margin-bottom: 1rem;
+    }
+
+    .header-section__title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .main-section {
+      border-bottom: 1px dashed black;
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    .main-section__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+
+    .main-section__group {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-bottom: .5rem;
+    }
+
+    .main-section__label {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-right: .75rem;
+      white-space: nowrap;
+    }
+
+    .main-section__input {
+      flex: 1;
+      margin-right: .5rem;
+    }
+
+    .main-section__button {
+      margin: 1rem auto;
+    }
+
+    .button-section {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .date-section {
+      display: none;
+    }
+
+    .date-section.date-section--revealed {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-section">
+    <div class="header-section__title">Welcome To the Potato TV Extension</div>
+  </div>
+
+  <section class="main-section">
+    <div class="main-section__title">Page Info</div>
+
+    <div class="main-section__group">
+      <div class="main-section__label">Current Page: </div>
+      <div id="page-title"></div>
+    </div>
+
+    <div class="main-section__group">
+      <div class="main-section__label">Current URL: </div>
+      <input readonly id="page-url" class="main-section__input"></input>
+      <button id="url-copy-button">Copy</button>
+    </div>
+
+  </section>
+
+  <section class="main-section">
+    <div class="main-section__title">Invite Potatoes</div>
+
+    <form id="email-form">
+      <div class="main-section__group">
+        <div class="main-section__label">Potato 1: </div>
+        <input name="potato-email" type="email" class="main-section__input"></input>
+      </div>
+
+      <div class="main-section__group">
+        <div class="main-section__label">Potato 2: </div>
+        <input name="potato-email" type="email" class="main-section__input"></input>
+      </div>
+
+      <div class="main-section__group">
+        <div class="main-section__label">Potato 3: </div>
+        <input name="potato-email" type="email" class="main-section__input"></input>
+      </div>
+
+    </form>
+
+    <div class="main-section__group">
+      <button id="add-potato-button" class="main-section__button">Add Another Potato!</button>
+    </div>
+  </section>
+
+
+  <section class="button-section">
+    <button>Potato Now</button>
+    <button id="potato-later-button">Potato Later</button>
+  </section>
+
+  <section id="date-selection" class="date-section">
+    <input type="datetime-local" />
+    <button>Go!</button>
+  </section>
+
+  <!-- Actually need this to get the URL and open in a new tab instead of displaying it -->
+  <!-- <button id="GetURL"> Watch now</button> -->
+  <!-- I need to actually get the button below to surface a timer -->
+  <!-- <button id="Timer"> Potato later</button> -->
+  <!-- This is a new test for opening in a second tab -->
+  <!-- <button onclick="NewTab()"> New tab test </button> -->
+  <!-- Below is where the URL surfaces (right now having it below the 2 buttons) -->
+  <!-- Problem with below is that the URL extends the length of the popup the longer the link -->
+  <!-- <p> <span id="url"> </span> </p>
+  <p> Watch with others <span id="selectedtext"> </span> </p>
+  <button id="colorChange"> Invite potatoes </button> -->
+  <script src="popup.js"></script>
+</body>
+
 </html>

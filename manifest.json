@@ -5,7 +5,7 @@
   "permissions": ["activeTab", "declarativeContent", "storage","contextMenus"],
   "options_page": "options.js",
   "browser_action": {
-      "default_popup": "popup.js",
+      "default_popup": "popup.html",
       "default_icon": {
         "16": "images/potato_icon.png"
       }
