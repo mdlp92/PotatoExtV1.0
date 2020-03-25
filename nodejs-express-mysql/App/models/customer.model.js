@@ -1,9 +1,4 @@
 const sql = require("./db.js");
-<<<<<<< HEAD
-// attempt to fix the time = undefined issue (define the variable)
-var time = 0;
-=======
->>>>>>> f928942217fee98f844cd49648f907dd9999d5e7
 
 // constructor - added in fields to match my sql DB
 const Customer = function(customer) {
