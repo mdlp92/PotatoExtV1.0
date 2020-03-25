@@ -2,9 +2,17 @@ const sql = require("./db.js");
 
 // constructor
 const Customer = function(customer) {
+  this.customer_ID = customer.customer_ID;
   this.email = customer.email;
-  this.name = customer.name;
-  this.active = customer.active;
+  this.first_name = customer.first_name;
+  this.last_name = customer.last_name;
+  this.date = customer.date;
+  this.time = customer.time;
+  this.content_link = time.content_link;
+  this.content_title = this.content_title;
+  // this.email = customer.email;
+  // this.name = customer.name;
+  // this.active = customer.active;
 };
 
 Customer.create = (newCustomer, result) => {
@@ -21,7 +29,7 @@ Customer.create = (newCustomer, result) => {
 };
 
 Customer.findById = (customerId, result) => {
-  sql.query(`SELECT * FROM customers WHERE id = ${customerId}`, (err, res) => {
+  sql.query(`SELECT * FROM customers WHERE id = ${customer_ID}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -52,7 +60,7 @@ Customer.getAll = result => {
   });
 };
 
-Customer.updateById = (id, customer, result) => {
+Customer.updateById = (id, customer, Content) => {
   sql.query(
     "UPDATE customers SET email = ?, name = ?, active = ? WHERE id = ?",
     [customer.email, customer.name, customer.active, id],
