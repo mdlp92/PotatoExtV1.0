@@ -38,9 +38,9 @@ exports.create = (req, res) => {
     });
   }
 
-  // Create a Customer
+  // Create a Customer - added fields to match my DB
   const customer = new Customer({
-    customer_ID: req.body.customer_ID,
+    // customer_ID: req.body.customer_ID,
     email: req.body.email,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
