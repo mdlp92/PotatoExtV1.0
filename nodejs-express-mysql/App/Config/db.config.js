@@ -1,6 +1,6 @@
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "123456",
-  DB: "testdb"
+  HOST: "extensiondb-1.czzb64wzgtnf.us-west-1.rds.amazonaws.com",
+  USER: "admin",
+  PASSWORD: "3202mdlp",
+  DB: "innodb"
 };
