@@ -10,9 +10,6 @@ const Customer = function(customer) {
   this.time = customer.time;
   this.content_link = customer.content_link;
   this.content_title = customer.content_title;
-  // this.email = customer.email;
-  // this.name = customer.name;
-  // this.active = customer.active;
 };
 
 Customer.create = (newCustomer, result) => {
