@@ -1,7 +1,7 @@
 {
   "name": "Potato Extension v3.0",
   "version": "3.0",
-  "description": "Potato TV helps you watch TV with your friends!",
+  "description": "Potato TV extension MVP",
   "permissions": ["activeTab", "declarativeContent", "storage","contextMenus"],
   "options_page": "options.js",
   "browser_action": {
