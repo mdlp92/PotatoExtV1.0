@@ -32,7 +32,7 @@ document.getElementById("url-copy-button").addEventListener("click", copyUrlToCl
 
 // The form for emails & full names - doesn't included full name for the "add potato" button
 const addPotato = () => {
-  const form = document.getElementById("email-form");
+  const form = document.getElementById("user-form");
   const numPotatoes = form["potato-email"].length; //this is what we need to fix/adjust so we can add name & email when they say "add potatoes"
 
   const newSection = document.createElement("DIV");
@@ -65,26 +65,40 @@ document.getElementById("potato-later-button").addEventListener("click", revealD
 
 getCurrentPageInfo();
 
-// Using fetch POST to send data to mysql environment
+// Using fetch POST to send data to EC2 instance via a public dns URL
 
-const urlsql = 'extensiondb-1.czzb64wzgtnf.us-west-1.rds.amazonaws.com';
+const awsapi = 'ec2-52-53-127-73.us-west-1.compute.amazonaws.com';
 // The data we are going to send in our request
 // The parameters we are gonna pass to the fetch function
 let fetchData = {
     method: 'POST',
-    body: new FormData(document.getElementById('email-form')),
+    body: new FormData(document.getElementById('user-form')),
     headers: new Headers()
 }
-fetch(urlsql, fetchData)
-.then(function() {
+fetch(awsapi, fetchData)
+  .then(function() {
     // Handle response you get from the server
 });
 
 // PotatoNow function will run fetch post when prompted
-const PotatoNow = = () => {
-  fetch(urlsql, fetchData)
+// const PotatoNow = = () => {
+//   fetch(urlsql, fetchData)
+//   .then(function() {
+//   })};
+
+// creating listener for potatonow --> submit info to database
+const PotatoNow = fetch(awsapi, fetchData)
   .then(function() {
-  })};
+});
 
 // creating a listener for Potato now button
-document.getElementById("potato-now-button").addEventListener("click", PotatoNow)
+document.getElementById("potato-now-button").addEventListener("click", PotatoNow);
+
+
+// creating listener for go button --> submit info to database
+const Gobutton = fetch(awsapi, fetchData)
+  .then(function() {
+});
+
+// creating a listener for Potato now button
+document.getElementById("go-button").addEventListener("click", Gobutton);
