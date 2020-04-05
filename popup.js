@@ -87,18 +87,18 @@ fetch(awsapi, fetchData)
 //   })};
 
 // creating listener for potatonow --> submit info to database
-const PotatoNow = fetch(awsapi, fetchData)
+const PotatoNow = function(fetch(awsapi, fetchData)
   .then(function() {
-});
+}));
 
 // creating a listener for Potato now button
 document.getElementById("potato-now-button").addEventListener("click", PotatoNow);
 
 
 // creating listener for go button --> submit info to database
-const Gobutton = fetch(awsapi, fetchData)
+const Gobutton = function(fetch(awsapi, fetchData)
   .then(function() {
-});
+}));
 
 // creating a listener for Potato now button
 document.getElementById("go-button").addEventListener("click", Gobutton);
