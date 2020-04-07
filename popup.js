@@ -1,4 +1,3 @@
-
 // processing the current tab/URL and putting it into the extension popup
 const getCurrentPageInfo = () => {
   var queryInfo = {
@@ -42,7 +41,7 @@ const addPotato = () => {
   newLabel.className = "main-section__label";
   newLabel.innerText = "Potato " + parseInt(numPotatoes + 1) + ": ";
 
-  const newInput = document.createElement("input");// also place need to fix/adjust to get names with add potato button
+  const newInput = document.createElement("input"); // also place need to fix/adjust to get names with add potato button
   newInput.setAttribute("type", "email");
   newInput.setAttribute("name", "potato-email");
   newInput.className = "main-section__input";
@@ -68,37 +67,38 @@ getCurrentPageInfo();
 // Using fetch POST to send data to EC2 instance via a public dns URL
 
 const awsapi = 'ec2-52-53-127-73.us-west-1.compute.amazonaws.com';
-// The data we are going to send in our request
-// The parameters we are gonna pass to the fetch function
-let fetchData = {
+
+// creating listener for potatonow --> submit info to database
+const handleClickPotatoNow = function() {
+  // The data we are going to send in our request
+  // The parameters we are gonna pass to the fetch function
+  let fetchData = {
     method: 'POST',
     body: new FormData(document.getElementById('user-form')),
     headers: new Headers()
+  }
+
+  fetch(awsapi, fetchData).then(() => {
+    // do something
+  });
 }
-fetch(awsapi, fetchData)
-  .then(function() {
-    // Handle response you get from the server
-});
-
-// PotatoNow function will run fetch post when prompted
-// const PotatoNow = = () => {
-//   fetch(urlsql, fetchData)
-//   .then(function() {
-//   })};
-
-// creating listener for potatonow --> submit info to database
-const PotatoNow = function(fetch(awsapi, fetchData))
-  .then(function() {
-});
 
 // creating a listener for Potato now button
-document.getElementById("potato-now-button").addEventListener("click", PotatoNow);
-
+document.getElementById("potato-now-button").addEventListener("click", handleClickPotatoNow);
 
 // creating listener for go button --> submit info to database
-const Gobutton = function(fetch(awsapi, fetchData))
-  .then(function() {
-});
+const handleClickGo = function() {
+  // The data we are going to send in our request
+  // The parameters we are gonna pass to the fetch function
+  let fetchData = {
+    method: 'POST',
+    body: new FormData(document.getElementById('user-form')),
+    headers: new Headers()
+  }
+  fetch(awsapi, fetchData)).then(() => {
+    // do something
+  });
+}
 
 // creating a listener for Potato now button
-document.getElementById("go-button").addEventListener("click", Gobutton);
+document.getElementById("go-button").addEventListener("click", handleClickGo);
