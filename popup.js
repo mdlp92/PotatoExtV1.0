@@ -66,7 +66,7 @@ getCurrentPageInfo();
 
 // Using fetch POST to send data to EC2 instance via a public dns URL
 
-const awsapi = 'ec2-52-53-127-73.us-west-1.compute.amazonaws.com';
+const awsapi = 'ec2-52-53-127-73.us-west-1.compute.amazonaws.com:3000';
 
 // creating listener for potatonow --> submit info to database
 const handleClickPotatoNow = function() {
@@ -95,7 +95,7 @@ const handleClickGo = function() {
     body: new FormData(document.getElementById('user-form')),
     headers: new Headers()
   }
-  fetch(awsapi, fetchData)).then(() => {
+  fetch(awsapi, fetchData).then(() => {
     // do something
   });
 }
