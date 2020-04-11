@@ -17,13 +17,3 @@ function getCurrentTabUrl() {
     document.getElementById('url').innerHTML = url;
   });
 }
-
-//this is the botton for potato later.
-
-// let Timer = document.getElementById('Timer');
-// function openInNewTab(url) {
-//   var win = window.open(url, '_blank');
-//   win.focus();
-// }
- // window.open(url)
- // Looking into this as on option as well for opening the URL in a new tab
