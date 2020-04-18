@@ -30,21 +30,26 @@ const copyUrlToClipboard = async () => {
 document.getElementById("url-copy-button").addEventListener("click", copyUrlToClipboard);
 
 // The form for emails & full names - doesn't included full name for the "add potato" button
-const addPotato = () => {
-  const form = document.getElementById("user-form");
-  const numPotatoes = form["potato-email"].length; //this is what we need to fix/adjust so we can add name & email when they say "add potatoes"
+// const addPotato = () => {
+//   const form = document.getElementById("user-form");
+//   const numPotatoes = form["potato-email"].length; //this is what we need to fix/adjust so we can add name & email when they say "add potatoes"
+
+//test form
+  const addPotato = () => {
+    const form = document.getElementById("user-form");
+    const numPotatoes = "potato-email1";
 
   const newSection = document.createElement("DIV");
-  newSection.className = "main-section__group";
+  newSection.className = "main-section_group";
 
   const newLabel = document.createElement("DIV");
   newLabel.className = "main-section__label";
-  newLabel.innerText = "Potato " + parseInt(numPotatoes + 1) + ": ";
+  newLabel.innerText = "Potato" + parseInt(numPotatoes + 1) + ": ";
 
   const newInput = document.createElement("input"); // also place need to fix/adjust to get names with add potato button
   newInput.setAttribute("type", "email");
   newInput.setAttribute("name", "potato-email");
-  newInput.className = "main-section__input";
+  newInput.className = "main-section_input";
 
   newSection.append(newLabel);
   newSection.append(newInput);
