@@ -31,19 +31,24 @@ document.getElementById("url-copy-button").addEventListener("click", copyUrlToCl
 
   const addPotato = () => {
     const form = document.getElementById("user-form");
-    // const numPotatoes = "potato-email1";
 
   const newSection = document.createElement("DIV");
   newSection.className = "form-group";
+  // newSection.innerText = "name@example.com"
+
+i = 3;
+var counter = i++;
 
   const newLabel = document.createElement("DIV");
   newLabel.className = "potato-email1";
-  newLabel.innerText = "Potato " + parseInt( + 1) + " ";
+  newLabel.innerText = "Potato " + i;
+  // newLabel.function = incre
 
-  const newInput = document.createElement("input"); // also place need to fix/adjust to get names with add potato button
+  const newInput = document.createElement("input");
   newInput.setAttribute("type", "email");
   newInput.setAttribute("name", "potato-email");
-  newInput.className = "main-section_input";
+  newInput.className = "form-control";
+  newInput.placeholder = "name@example.com";
 
   newSection.append(newLabel);
   newSection.append(newInput);
