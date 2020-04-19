@@ -29,22 +29,16 @@ const copyUrlToClipboard = async () => {
 
 document.getElementById("url-copy-button").addEventListener("click", copyUrlToClipboard);
 
-// The form for emails & full names - doesn't included full name for the "add potato" button
-// const addPotato = () => {
-//   const form = document.getElementById("user-form");
-//   const numPotatoes = form["potato-email"].length; //this is what we need to fix/adjust so we can add name & email when they say "add potatoes"
-
-//test form
   const addPotato = () => {
     const form = document.getElementById("user-form");
-    const numPotatoes = "potato-email1";
+    // const numPotatoes = "potato-email1";
 
   const newSection = document.createElement("DIV");
-  newSection.className = "main-section_group";
+  newSection.className = "form-group";
 
   const newLabel = document.createElement("DIV");
-  newLabel.className = "main-section__label";
-  newLabel.innerText = "Potato" + parseInt(numPotatoes + 1) + ": ";
+  newLabel.className = "potato-email1";
+  newLabel.innerText = "Potato " + parseInt( + 1) + " ";
 
   const newInput = document.createElement("input"); // also place need to fix/adjust to get names with add potato button
   newInput.setAttribute("type", "email");
