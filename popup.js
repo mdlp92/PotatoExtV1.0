@@ -13,9 +13,9 @@ const getCurrentPageInfo = () => {
   });
 }
 
+//copy the URL button
 const copyUrlToClipboard = async () => {
   if (!navigator.clipboard) {
-    // Clipboard API not available
     return
   }
   let url = document.getElementById('page-url').value;
@@ -29,6 +29,7 @@ const copyUrlToClipboard = async () => {
 
 document.getElementById("url-copy-button").addEventListener("click", copyUrlToClipboard);
 
+//add potatoes button
   const addPotato = () => {
     const form = document.getElementById("user-form");
 
@@ -36,6 +37,7 @@ document.getElementById("url-copy-button").addEventListener("click", copyUrlToCl
   newSection.className = "form-group";
   // newSection.innerText = "name@example.com"
 
+//attempt to increment add potato count: 1, 2, 3, 4...
 i = 3;
 var counter = i++;
 
@@ -56,6 +58,9 @@ var counter = i++;
 }
 
 document.getElementById("add-potato-button").addEventListener("click", addPotato);
+
+
+// this is the date/time button selection
 
 const revealDateSection = () => {
   const dateSection = document.getElementById("date-selection");
